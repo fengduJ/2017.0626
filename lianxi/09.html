@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title></title>
+		<link href="lib/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="lib/jquery-1.11.0.js" ></script>
+		
+		<script type="text/javascript" src="lib/dist/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="lib/angular.min.js" ></script>
+		
+	</head>
+	<body ng-app="myApp">
+		<div class="container"  ng-controller="ctrl">
+		    <table class="table table-bordered">
+		      <thead>
+		        <tr>
+		          <th>序号</th>
+		          <th>姓名</th>
+		          <th>性别</th>
+		          <th>关注数</th>
+		          <th>关注</th>
+		          <th>取消关注</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr ng-repeat="item in list">
+		          <th scope="row">{{$index+1}}</th>
+		          <td>{{item.name}}</td>
+		          <td>{{item.sex}}</td>
+		          <td>{{item.num}}</td>
+		          <td><button type="button" class="btn btn-primary" ng-click=addNum(item)>关注</button></td> 
+		          <td><button type="button" class="btn btn-success" ng-click=reduceNum(item)>取消关注</button></td> 
+		        </tr>
+		       
+		      </tbody>
+		    </table>
+		  </div>
+  <script>
+  	var app=angular.module("myApp",[]);
+  	app.controller("ctrl",function($scope){
+  		$scope.list=[
+  		{
+  			name:"张三",
+  			sex:"男",
+  			num:40
+  			
+  		},{
+  			name:"李四",
+  			sex:"男",
+  			num:21
+  			
+  		},{
+  			name:"王五",
+  			sex:"男",
+  			num:10
+  			
+  		},{
+  			name:"赵六",
+  			sex:"男",
+  			num:20
+  			
+  		},{
+  			name:"赵日天",
+  			sex:"男",
+  			num:46
+  			
+  		}];
+  		$scope.addNum=function(item){
+  			item.num+=1;
+  		};
+  		$scope.reduceNum=function(item){
+  			item.num-=1;
+  		};
+  	})
+  </script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="lib/angular.min.js" ></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="ctrl">
+			<ul>
+				<li ng-repeat="item in username">
+					{{item.name}}今年{{item.age}}岁,是一个{{item.sex}}的，电话是{{item.tel}}
+				</li>
+			</ul>
+			
+		</div>
+		<script>
+			var app=angular.module("myApp",[]);
+			app.controller("ctrl",function($scope){
+				$scope.username=[{
+					name:"张三",
+					tel:110,
+					sex:"男",
+					age:22
+				},{
+					name:"李四",
+					tel:120,
+					sex:"女",
+					age:23
+				},{
+					name:"王五",
+					tel:119,
+					sex:"女",
+					age:25
+				},{
+					name:"赵六",
+					tel:100,
+					sex:"男",
+					age:27
+				}
+				]
+					
+				
+			})
+		</script>
+	</body>
+</html>

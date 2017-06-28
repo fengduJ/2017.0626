@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="lib/angular.min.js" ></script>
+	</head>
+	<body ng-app="myApp">
+		<!--以前得写法，写入图片-->
+		<img src="image/timg (6).jpg" />
+		<hr />
+		<!--用angular写法,{{imgUrl}}-->
+		<div ng-controller="ctrl">
+			<img src="{{imgUrl}}" />
+		</div>
+		
+	</body>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("ctrl",function($scope){
+			$scope.imgUrl="image/timg (6).jpg"
+		})
+	</script>
+</html>

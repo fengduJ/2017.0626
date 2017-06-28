@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="lib/angular.min.js"></script>
+	</head>
+	<body ng-controller="ctrl">
+		{{msg}}
+		
+		<ul>
+			<li ng-repeat="item in list">{{item}}-----{{$index}}</li>
+		</ul>
+	</body>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("ctrl",function($scope){
+			$scope.msg="angular初体验";
+		$scope.list=[
+				"奔驰","宝马","兰博基尼","雷诺","卓越"
+			]
+		})
+	</script>
+</html>

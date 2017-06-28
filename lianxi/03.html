@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="lib/angular.min.js" ></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="ctrl">
+			{{msg}}----{{10+1}}-------{{"a"+"b"}}
+			<hr />
+			{{list.name}}今年{{list.age}}岁,是一个{{list.sex}}的，喜欢{{list.like}}运动
+			<hr />
+			{{res[0]}}
+			
+		</div>
+		<script>
+			var app=angular.module("myApp",[]);
+			app.controller("ctrl",function($scope){
+				$scope.msg="你好啊，欢迎来到召唤师峡谷";
+				$scope.list={
+				  name:"wl",
+				  age:22,
+				  sex:"男",
+				  like:"soccer",
+				  tel:4411110
+				}
+				$scope.res=["奔驰","宝马","兰博基尼","马萨拉蒂","雷诺"]
+			})
+		</script>
+	</body>
+</html>
